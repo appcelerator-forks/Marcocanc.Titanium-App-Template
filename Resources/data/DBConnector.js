@@ -1,9 +1,12 @@
-function DBConnector(settings) {
+var  DBConnector = (function() {
 	
-this.test = function(){
-	return "Working!";
+
+return{
+	test:function(){
+		return "Test!";
+	}
 };
-}
 
 
+})();
 module.exports = DBConnector; 

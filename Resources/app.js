@@ -1,33 +1,21 @@
 	var App={};
 	
 	//Global variables and settings
-	App.Globals = require("/Globals");
-	App.G = new App.Globals();
+	App.G = require("/Globals");
 	//APIs
-	App.DataObj = require("/data/APIConnector");
-	App.API = new App.DataObj();
+	App.API = require("/data/APIConnector");
 	//Database
-	App.DatabaseObj = require("/data/DBConnector");
-	App.DB = new App.DatabaseObj();
+	App.DB = require("/data/DBConnector");
 
 
-
-     if (App.G.osname === 'iphone') {
-     	//REQUIRES
-     	//Windows
-     	var MasterWindow = require('/ui/handheld/ios/MasterWindow');
-     	
-		//Views
-		var LoadingView = require('/ui/handheld/ios/LoadingView');
-		
-		 
+     if (App.G.osname === 'iphone') {		 
 		//UI object
 		App.UI = {};
 		//Windows
-		App.UI.masterWindow = new MasterWindow();
+		App.UI.masterWindow = require('/ui/handheld/ios/MasterWindow');
 		
 		//Views
-		App.UI.loadingView = new LoadingView();
+		App.UI.loadingView = require('/ui/handheld/ios/LoadingView');
 		
 		
 		//UNCOMMENT FOR NAVIGATION APP

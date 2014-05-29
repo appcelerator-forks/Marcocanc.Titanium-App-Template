@@ -1,21 +1,20 @@
-function AppGlobals(){
-	this.osname = Ti.Platform.osname;
-    this.version = Ti.Platform.version;
-    this.height = Ti.Platform.displayCaps.platformHeight,
-    this.width = Ti.Platform.displayCaps.platformWidth;
+var AppGlobals = (function() {
+	
+	
+	
+	
+	return{
+		osname:Ti.Platform.osname,
+		version:Ti.Platform.version,
+		height:Ti.Platform.displayCaps.platformHeight,
+		width:Ti.Platform.displayCaps.platformWidth,
+		iOS7: isiOS7Plus(),
+		iOS:isiOS(),
+		android:isAndroid()
 		
-	//check if device has iOS7 or greater
-	this.iOS7 = isiOS7Plus();
+	};
+		
 	
-	
-	this.iOS=false;
-	if (Titanium.Platform.name === 'iPhone OS'){
-		this.iOS=true;
-	}
-	this.isAndroid=false;
-	if (Titanium.Platform.name === 'android'){
-		this.isAndroid=true;
-	}
 
 //FUNCTIONS
 	// Function to test if device is iOS 7 or later
@@ -33,7 +32,13 @@ function AppGlobals(){
 			}
 		}
 		return false;
+	}
+	function isiOS(){
+		return Ti.Platform.name === 'iPhone OS';
+	}
+	function isAndroid (){
+		return Ti.Platform.name === 'android';
 	}	
-}
+})();
 
 module.exports = AppGlobals;

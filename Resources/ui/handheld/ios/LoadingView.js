@@ -1,4 +1,4 @@
-function LoadingView() {
+var loadingView = (function() {
 	//create object instance, parasitic subclass of Observable
 	var self = Ti.UI.createView({
 		backgroundColor:"black",
@@ -26,6 +26,6 @@ function LoadingView() {
 	self.hide();
 	
 	return self;
-};
+})();
 
-module.exports = LoadingView;
+module.exports = loadingView;

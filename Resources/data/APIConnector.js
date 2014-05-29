@@ -1,6 +1,14 @@
-function APIConnector(settings) {
+var apiConnector = (function() {
 	
-	this.getJSON = function(url, data, callback){
+	
+	
+	return{
+		getJSON:function(url, data, callback){
+			return getJSON (url, data, callback);
+		},
+	};
+	
+	function getJSON (url, data, callback){
 		if (typeof(data) == "function"){
 					callback = data;
 				}else if(data){
@@ -35,9 +43,7 @@ function APIConnector(settings) {
 		});
 		client.open("GET", url);
 		client.send();
-	};
+	}
 	
-}
-
-
-module.exports = APIConnector; 
+}());
+module.exports = apiConnector;
