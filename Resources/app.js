@@ -22,7 +22,7 @@
 		/*
 		//create iOS specific NavGroup UI
 		App.UI.navWin = Ti.UI.iOS.createNavigationWindow({
-			window:ApplaudTruck.UI.masterWindow
+			window:App.UI.masterWindow
 		});
 		*/
 		
